@@ -24,7 +24,6 @@
 
         function loadModels() {
             var selectedBrand = brandSelect.value;
-            var directory = "directory_dei_tuoi_file_xml/"; // Inserisci qui la directory dei tuoi file XML
             var xhr = new XMLHttpRequest();
 
             xhr.onload = function () {
@@ -44,8 +43,8 @@
                 }
             };
 
-            // Utilizza la directory specificata direttamente nel codice
-            var xmlFile = directory + selectedBrand + ".xml";
+            // Utilizza il percorso diretto al file XML su GitHub
+            var xmlFile = "https://raw.githubusercontent.com/Riccardo272/index.html/main/" + selectedBrand + ".xml";
             xhr.open("GET", xmlFile, true);
             xhr.send();
         }
@@ -54,3 +53,4 @@
     </script>
 </body>
 </html>
+
