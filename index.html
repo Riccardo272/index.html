@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Selezione di modelli di auto</title>
+</head>
+<body>
+    <h1>Scegli un modello di auto</h1>
+    <select id="brandSelect">
+        <option value="Ferrari">Ferrari</option>
+        <option value="Lamborghini">Lamborghini</option>
+        <option value="Mercedes">Mercedes</option>
+    </select>
+
+    <h2>Modelli disponibili:</h2>
+    <div id="modelList"></div>
+
+    <script>
+        var brandSelect = document.getElementById("brandSelect");
+        var modelList = document.getElementById("modelList");
+
+        brandSelect.addEventListener("change", function () {
+            loadModels();
+        });
+
+        function loadModels() {
+            var selectedBrand = brandSelect.value;
+            var xhr = new XMLHttpRequest();
+
+            xhr.onload = function () {
+                if (xhr.status >= 200 && xhr.status < 300) {
+                    var xmlDoc = xhr.responseXML;
+                    var models = xmlDoc.getElementsByTagName(selectedBrand)[0].children;
+                    var output = "<ul>";
+
+                    for (var i = 0; i < models.length; i++) {
+                        output += "<li>" + models[i].textContent + "</li>";
+                    }
+
+                    output += "</ul>";
+                    modelList.innerHTML = output;
+                } else {
+                    console.log("Errore durante il caricamento del file XML.");
+                }
+            };
+
+            xhr.open("GET", selectedBrand + ".xml", true);
+            xhr.send();
+        }
+
+        loadModels(); // Carica i modelli al caricamento della pagina
+    </script>
+</body>
+</html>
