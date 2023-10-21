@@ -24,6 +24,7 @@
 
         function loadModels() {
             var selectedBrand = brandSelect.value;
+            var directory = "directory_dei_tuoi_file_xml/"; // Inserisci qui la directory dei tuoi file XML
             var xhr = new XMLHttpRequest();
 
             xhr.onload = function () {
@@ -43,7 +44,9 @@
                 }
             };
 
-            xhr.open("GET", selectedBrand + ".xml", true);
+            // Utilizza la directory specificata direttamente nel codice
+            var xmlFile = directory + selectedBrand + ".xml";
+            xhr.open("GET", xmlFile, true);
             xhr.send();
         }
 
