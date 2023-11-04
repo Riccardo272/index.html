@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<carModels>
     <models brand="Mercedes">
         <model>Mercedes-Benz C-Class</model>
         <model>Mercedes-Benz E-Class</model>
@@ -15,4 +14,3 @@
         <model>Ferrari Portofino</model>
         <model>Ferrari F8 Tributo</model>
     </models>
-</carModels>
