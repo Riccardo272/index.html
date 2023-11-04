@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <carModels>
-    <models>
+    <models brand="Mercedes">
         <model>Mercedes-Benz C-Class</model>
         <model>Mercedes-Benz E-Class</model>
         <model>Mercedes-Benz S-Class</model>
     </models>
-    <models>
+    <models brand="Lamborghini">
         <model>Lamborghini Huracán</model>
         <model>Lamborghini Aventador</model>
         <model>Lamborghini Urus</model>
     </models>
-    <models>
+    <models brand="Ferrari">
         <model>Ferrari 488 GTB</model>
         <model>Ferrari Portofino</model>
         <model>Ferrari F8 Tributo</model>
